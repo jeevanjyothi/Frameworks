@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+
+<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+    </layout>
+  </appender>
+
+ <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+  <file>${user.dir}/log/ApplicationLog.html</file> 
+  <layout class="ch.qos.logback.classic.PatternLayout">
+    <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+  </layout>
+  <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+           <charset>UTF-8</charset>
+           <layout class="ch.qos.logback.classic.html.HTMLLayout">
+               <pattern>%d{HH:mm:ss.SSS}%thread%level%logger%line%msg</pattern>
+           </layout>           
+       </encoder>
+</appender>
+
+  <root level="debug">
+    <appender-ref ref="FILE"/>
+    <appender-ref ref="STDOUT" />
+  </root>
+</configuration>

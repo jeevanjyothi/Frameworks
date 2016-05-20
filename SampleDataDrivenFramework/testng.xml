@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Box" preserve-order="true">
+	<!--<groups> <run> <include name="new"/> </run> </groups> -->
+	<listeners>
+		<listener class-name="com.automation.qa.listener.CaptureScreenShot" />
+		
+	</listeners>
+	<test name="Login Test">
+		<classes>
+			<class name="com.automation.qa.test.GmailTest">
+			   <methods>
+		  <include name="testLoginWithValidCredentials"/> 
+			    
+		   </methods> 
+		      </class>
+		</classes>
+	</test>
+	
+</suite>
